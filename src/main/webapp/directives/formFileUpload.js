@@ -4,7 +4,7 @@
 			replace: true,
 			scope: {
 				name: '@',
-				fileread: '=',
+				fileread: '='
 			},
 			templateUrl: '/directives/formFileUpload.html',
 	        link: function(scope, element, attrs) {
@@ -17,6 +17,7 @@
 	        	        });
 	        		}
 	        		reader.readAsDataURL(changeEvent.target.files[0]);
+	        		$scope.save();
 	        	})
 	        	
 	        }
