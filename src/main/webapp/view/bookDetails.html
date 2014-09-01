@@ -1,0 +1,35 @@
+<div class="modal-header">
+	<h3 class="modal-title text-center">Book details</h3>
+</div>
+<div class="modal-body" data-ng-init="init()">
+	<div class="container">
+		<form class="form-horizontal" role="form">
+			<img src="{{book.image}}" height="150" width="100" />
+			<br>
+			<form-row model="book.title" name="Title" size="col-sm-3" type="text"></form-row>
+			<form-row model="book.author" name="Author"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.yearOfPublishing" name="Year"  size="col-sm-3" type="number"></form-row>
+			<form-row model="book.publisher" name="Publisher"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.cityOfPublishing" name="City"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.language" name="Language"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.series" name="Series"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.editionStatement" name="Edition statement"  size="col-sm-3" type="text"></form-row>
+			<form-row model="book.isbn" name="ISBN"  size="col-sm-3" type="number" min="1014" max="2014"></form-row>
+			<form-select model="book.genre" name="Genre" selects="['NONFICTION','FICTION']"  size="col-sm-3"></form-select>
+			<form-select model="book.cover" name="Cover" selects="['PAPERBACK','HARDCOVER']"  size="col-sm-3"></form-select>
+			<form-file-upload name="Book Cover Image" fileread="book.image"></form-file-upload>
+		</form>
+	</div>
+</div>
+<div class="modal-footer">
+	<img data-ng-src='{{image}}'>
+	<button class="btn btn-success" data-ng-click="save()">
+		Save
+	</button>
+	<button class="btn btn-danger" data-ng-click="deleteBook()">
+		Delete
+	</button>
+	<button class="btn btn-warning" data-ng-click="cancel()">
+		Cancel
+	</button>
+</div>
