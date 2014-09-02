@@ -26,7 +26,7 @@
 					<form-row model="currentUser.city" name="City:" size="col-sm-8" callback="save()"></form-row>
 					<form-row model="currentUser.country" name="Country:" size="col-sm-8" callback="save()"></form-row>
 					<form-text-area model="currentUser.about" name="About:" size="col-sm-8" callback="save()"></form-text-area>
-					<form-file-upload fileread="currentUser.avatar" size="col-sm-8" name="Avatar photo:"></form-file-upload>
+					<form-file-upload fileread="currentUser.avatar" size="col-sm-8" name="Avatar photo:" callback="save"></form-file-upload>
 					<alert ng-repeat="alert in alerts" close="closeAlert($index)" type="alert.type">{{alert.message}}</alert>
 				</form>
 			</div>
