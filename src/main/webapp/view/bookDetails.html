@@ -15,8 +15,8 @@
 			<form-row model="book.series" name="Series"  size="col-sm-3" type="text"></form-row>
 			<form-row model="book.editionStatement" name="Edition statement"  size="col-sm-3" type="text"></form-row>
 			<form-row model="book.isbn" name="ISBN"  size="col-sm-3" type="number" min="1014" max="2014"></form-row>
-			<form-select model="book.genre" name="Genre" selects="['NONFICTION','FICTION']"  size="col-sm-3"></form-select>
-			<form-select model="book.cover" name="Cover" selects="['PAPERBACK','HARDCOVER']"  size="col-sm-3"></form-select>
+			<form-select model="book.genre" name="Genre" options="genres" size="col-sm-3"></form-select>
+			<form-select model="book.cover" name="Cover" options="covers" size="col-sm-3"></form-select>
 			<form-file-upload name="Book Cover Image" fileread="book.image"></form-file-upload>
 		</form>
 	</div>
