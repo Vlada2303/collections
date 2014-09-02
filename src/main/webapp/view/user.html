@@ -18,6 +18,9 @@
             {{currentUser.country}}
             <br>
             <strong>City:</strong> {{currentUser.city}}
+            <br>
+            <strong>Age:</strong>
+            {{2014-currentUser.dateOfBirth}}
         </p>
     </div>
     <div class="col-lg-8">
@@ -34,6 +37,7 @@
                         <form class="form-horizontal" role="form">
                             <form-row model="currentUser.firstName" name="First name:" size="col-sm-8" callback="save()"></form-row>
                             <form-row model="currentUser.lastName" name="Last name:" size="col-sm-8" callback="save()"></form-row>
+                            <form-select model="currentUser.dateOfBirth" name="Birth Year:" options="years"></form-select>
                             <form-row model="currentUser.city" name="City:" size="col-sm-8" callback="save()"></form-row>
                             <form-row model="currentUser.country" name="Country:" size="col-sm-8" callback="save()"></form-row>
                             <form-text-area model="currentUser.about" name="About:" size="col-sm-8" callback="save()"></form-text-area>

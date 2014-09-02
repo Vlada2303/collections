@@ -34,7 +34,7 @@ public class User {
     private String curentPassword;
 
     @Column(name = "date_of_birth")
-    private long DateOfBirth;
+    private long dateOfBirth;
 
     @Column(name = "about")
     private String about;
@@ -97,11 +97,11 @@ public class User {
     }
 
     public long getDateOfBirth() {
-        return DateOfBirth;
+        return dateOfBirth;
     }
 
     public void setDateOfBirth(long dateOfBirth) {
-        DateOfBirth = dateOfBirth;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getAbout() {
@@ -156,12 +156,12 @@ public class User {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int) (DateOfBirth ^ (DateOfBirth >>> 32));
         result = prime * result + ((about == null) ? 0 : about.hashCode());
         result = prime * result + ((avatar == null) ? 0 : avatar.hashCode());
         result = prime * result + ((city == null) ? 0 : city.hashCode());
         result = prime * result + ((country == null) ? 0 : country.hashCode());
         result = prime * result + ((curentPassword == null) ? 0 : curentPassword.hashCode());
+        result = prime * result + (int) (dateOfBirth ^ (dateOfBirth >>> 32));
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + (enabled ? 1231 : 1237);
         result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
@@ -180,8 +180,6 @@ public class User {
         if (getClass() != obj.getClass())
             return false;
         User other = (User) obj;
-        if (DateOfBirth != other.DateOfBirth)
-            return false;
         if (about == null) {
             if (other.about != null)
                 return false;
@@ -207,6 +205,8 @@ public class User {
                 return false;
         } else if (!curentPassword.equals(other.curentPassword))
             return false;
+        if (dateOfBirth != other.dateOfBirth)
+            return false;
         if (email == null) {
             if (other.email != null)
                 return false;
@@ -230,5 +230,4 @@ public class User {
             return false;
         return true;
     }
-
 }
