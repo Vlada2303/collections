@@ -9,7 +9,6 @@ collectionsApp.directive('formRow', function(){
 			size: '@',
 			type: '@',
 			icon: '@'
-			
 		},
 		templateUrl: '/directives/formRow.html',
         link: function(scope, attrs, element) {

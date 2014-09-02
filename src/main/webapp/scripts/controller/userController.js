@@ -1,16 +1,21 @@
 collectionsApp.controller('userController', function($scope, userService, $timeout, $state) {
-
-    $scope.alerts = [];
-    var timer = false;
-
-    $scope.password = {
-        newPassword : "",
-        repeatedNewPassword : "",
-        currentPassword : "",
-    }
+    
+    var timer = false;          //timer is undefined if in init
 
     $scope.init = function() {
+
+        $scope.alerts = [];
+
+        $scope.years = [];
+
+        $scope.password = {
+            newPassword : "",
+            repeatedNewPassword : "",
+            currentPassword : "",
+        }
+
         userService.getCurrentUser(getCurrentUser);
+        generateYears();
     }
 
     $scope.save = function() {
@@ -56,4 +61,17 @@ collectionsApp.controller('userController', function($scope, userService, $timeo
     $scope.closeAlerts = function() {
         $scope.alerts = [];
     }
+
+    generateYears = function() {
+        for (i = 1914; i <= 2014; i++) {
+            $scope.years.push(i);
+        }
+    }
+
+    $scope.$watch("currentUser.dateOfBirth", function(dateOfBirth) {
+        if (dateOfBirth) {
+            $scope.save();
+        }
+    })
+
 });
