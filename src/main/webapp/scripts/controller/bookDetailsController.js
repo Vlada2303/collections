@@ -1,9 +1,13 @@
-collectionsApp.controller('bookDetailsController', function($scope, $modalInstance, bookService, book) {
+collectionsApp.controller('bookDetailsController' , function($scope, $modalInstance, bookService, book, $translate) {
 
     $scope.init = function() {
         $scope.book = book;
-        bookService.getCoverTypes(onInitGetCovers);
-        bookService.getGenreTypes(onInitGetGenres);
+        bookService.getCoverTypes(function(response) {
+            $scope.covers = response.data;
+        });
+        bookService.getGenreTypes(function(response) {
+            $scope.genres = response.data;
+        });
     }
 
     $scope.save = function() {
@@ -34,14 +38,6 @@ collectionsApp.controller('bookDetailsController', function($scope, $modalInstan
         } else {
             alert("DEBUG ALERT: DELETE FAIL");
         }
-    }
-
-    onInitGetCovers = function(response) {
-        $scope.covers = response.data;
-    }
-
-    onInitGetGenres = function(response) {
-        $scope.genres = response.data;
     }
 
 });
