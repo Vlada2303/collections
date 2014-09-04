@@ -11,8 +11,5 @@ collectionsApp.directive('formRow', function() {
             icon : '@'
         },
         templateUrl : '/directives/formRow.html',
-        link : function(scope, attrs, element) {
-
-        }
     }
 });

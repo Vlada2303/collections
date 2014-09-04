@@ -16,12 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 import eu.execom.collections.dao.BookDAO;
 import eu.execom.collections.dao.UserDAO;
 import eu.execom.collections.model.Book;
+import eu.execom.collections.model.Book.coverType;
+import eu.execom.collections.model.Book.genreType;
 import eu.execom.collections.utility.Response;
 
 @RestController
 @RequestMapping("/book")
 public class BookController {
 
+    final public genreType[] genreTypes = genreType.values();
+    final public coverType[] coverTypes = coverType.values();
+    
     @Resource
     BookDAO bookDao;
     
@@ -46,5 +51,15 @@ public class BookController {
     @RequestMapping(value = "/getAllBooks", method = RequestMethod.GET)
     public List<Book> listBook() {
         return bookDao.findByUser(userDao.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName()));
+    }
+    
+    @RequestMapping(value = "/getGenreTypes", method = RequestMethod.GET)
+    public genreType[] getGenreTypes() {
+        return genreTypes;
+    }
+    
+    @RequestMapping(value = "/getCoverTypes", method = RequestMethod.GET)
+    public coverType[] getCoverTypes() {
+        return coverTypes;
     }
 }

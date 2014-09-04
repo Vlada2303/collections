@@ -1,4 +1,4 @@
-collectionsApp.directive('formSelect', function() {
+collectionsApp.directive('formSelectYear', function() {
     return {
         restrict : 'E',
         replace : true,
@@ -7,6 +7,6 @@ collectionsApp.directive('formSelect', function() {
             name : '@',
             options : '='
         },
-        templateUrl : '/directives/formSelect.html',
+        templateUrl : '/directives/formSelectYear.html',
     }
 });

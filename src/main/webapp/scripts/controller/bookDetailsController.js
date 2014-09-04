@@ -1,37 +1,43 @@
-collectionsApp.controller('bookDetailsController', function($scope, $modalInstance, bookService, book) {
+collectionsApp.controller('bookDetailsController' , function($scope, $modalInstance, bookService, book) {
 
-	$scope.init = function () {
-		$scope.book = book;
-	}
-	
-	$scope.save = function() {
-		bookService.save($scope.book, onSave);
-	}
+    $scope.init = function() {
+        $scope.book = book;
+        bookService.getCoverTypes(function(response) {
+            $scope.covers = response.data;
+        });
+        bookService.getGenreTypes(function(response) {
+            $scope.genres = response.data;
+        });
+    }
 
-	$scope.deleteBook = function() {
-		bookService.deleteBook($scope.book, onDelete);
-	}
+    $scope.save = function() {
+        bookService.save($scope.book, onSave);
+    }
 
-	$scope.cancel = function() {
-		$modalInstance.dismiss('cancel');
-	}
+    $scope.deleteBook = function() {
+        bookService.deleteBook($scope.book, onDelete);
+    }
 
-	onSave = function(response) {
-		status = response.data.status;
-		if (status === 'success') {
-			$modalInstance.close(status);
-		} else {
-			alert("DEBUG ALERT: SAVE/DELETE FAIL");
-		}
-	}
-	
-	onDelete = function(response) {
-		status = response.data.status;
-		if (status === 'success') {
-			$modalInstance.close(status);
-		} else {
-			alert("DEBUG ALERT: SAVE/DELETE FAIL");
-		}
-	}
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    }
+
+    onSave = function(response) {
+        status = response.data.status;
+        if (status === 'success') {
+            $modalInstance.close(status);
+        } else {
+            alert("DEBUG ALERT: SAVE FAIL");
+        }
+    }
+
+    onDelete = function(response) {
+        status = response.data.status;
+        if (status === 'success') {
+            $modalInstance.close(status);
+        } else {
+            alert("DEBUG ALERT: DELETE FAIL");
+        }
+    }
 
 });
