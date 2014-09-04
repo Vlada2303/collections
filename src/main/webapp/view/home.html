@@ -1,54 +1,47 @@
 <p class="text-right">
-    <a type="submit" class="btn btn-default" href="#login">{{'SIGN_IN' | translate}}</a><a type="submit" href="#register"
-    class="btn btn-default" href="#register">{{'REGISTER' | translate}}</a>
+    <a type="submit" class="btn btn-default" href="#login">{{'SIGN_IN' | translate}}</a><a type="submit"
+        href="#register" class="btn btn-default" href="#register">{{'REGISTER' | translate}}</a>
 </p>
 <h3 align="center" class="text-muted">{{'HOME_HEADLINE_ONE' | translate}}</h3>
-<p font-size="18px">
-    {{'HOME_PARAGRAPH_ONE' | translate}}
-</p>
+<p font-size="18px">{{'HOME_PARAGRAPH_ONE' | translate}}</p>
 <div style="margin-top: 30px">
     <div align="center">
-        <carousel interval="myInterval">
-            <slide data-ng-repeat="slide in slides" active="slide.active">
-                <img
-                data-ng-src="{{slide.image}}" style="margin: auto;">
-            </slide>
-        </carousel>
+        <carousel interval="myInterval"> <slide data-ng-repeat="slide in slides" active="slide.active">
+        <img data-ng-src="{{slide.image}}" style="margin: auto;"> </slide> </carousel>
     </div>
 </div>
 <div style="margin-top: 30px">
-    <h4 class="text-muted"><strong>{{'HOME_HEADLINE_TWO' | translate}}</strong></h4>
-    <p>
-        {{'HOME_PARAGRAPH_TWO' | translate}}
-    </p>
+    <h4 class="text-muted">
+        <strong>{{'HOME_HEADLINE_TWO' | translate}}</strong>
+    </h4>
+    <p>{{'HOME_PARAGRAPH_TWO' | translate}}</p>
 </div>
 <div style="margin-top: 30px">
     <div class="row">
         <div class="col-lg-4">
-            <img src="/public/devices.png" class="img-responsive" alt="Responsive image">
-            <br>
-            <h4 class="text-muted"><strong>{{'HOME_COLUMN_ONE' | translate}}</strong></h4>
-            <p class="bg-danger">
-                {{'HOME_COLUMN_TEXT_ONE' | translate}}
-            </p>
+            <img src="/public/devices.png" class="img-responsive" alt="Responsive image"> <br>
+            <h4 class="text-muted">
+                <strong>{{'HOME_COLUMN_ONE' | translate}}</strong>
+            </h4>
+            <p class="bg-danger">{{'HOME_COLUMN_TEXT_ONE' | translate}}</p>
         </div>
         <div class="col-lg-4">
             <img src="/public/plans.jpg" class="img-responsive" alt="Responsive image">
-            <h4 class="text-muted"><strong>{{'HOME_COLUMN_TWO' | translate}}</strong></h4>
-            <p class="bg-success">
-                {{'HOME_COLUMN_TEXT_TWO' | translate}}
-            </p>
+            <h4 class="text-muted">
+                <strong>{{'HOME_COLUMN_TWO' | translate}}</strong>
+            </h4>
+            <p class="bg-success">{{'HOME_COLUMN_TEXT_TWO' | translate}}</p>
         </div>
         <div class="col-lg-4">
             <img src="/public/job.jpg" class="img-responsive" alt="Responsive image">
-            <h4 class="text-muted"><strong>{{'HOME_COLUMN_THREE' | translate}}</strong></h4>
-            <p class="bg-warning">
-                {{'HOME_COLUMN_TEXT_TREE' | translate}}
-            </p>
+            <h4 class="text-muted">
+                <strong>{{'HOME_COLUMN_THREE' | translate}}</strong>
+            </h4>
+            <p class="bg-warning">{{'HOME_COLUMN_TEXT_TREE' | translate}}</p>
             <p>
-                <a class="btn btn-default" href="mailto:papuga.yu@gmail.com" role="button">{{'CONTACT_BUTTON' | translate}} &raquo</a>
+                <a class="btn btn-default" href="mailto:papuga.yu@gmail.com" role="button">{{'CONTACT_BUTTON' |
+                    translate}} &raquo</a>
             </p>
         </div>
     </div>
 </div>
-

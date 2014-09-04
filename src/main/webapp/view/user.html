@@ -2,53 +2,56 @@
 <br>
 <br>
 <div class="row">
-	<div class="col-lg-4">
-		<p>
-			<img src="{{currentUser.avatar}}" height="300" width="200" /> <br> <br> <strong>{{'FIRST_NAME' |
-				translate}}</strong> {{currentUser.firstName}} <br> <strong>{{'LAST_NAME' | translate}}</strong>
-			{{currentUser.lastName}} <br> <strong>{{'COUNTRY' | translate}}</strong> {{currentUser.country}} <br> <strong>{{'CITY'
-				| translate}}</strong> {{currentUser.city}} <br> <strong>{{'AGE' | translate}}</strong> {{2014-currentUser.dateOfBirth}}
-		</p>
-	</div>
-	<div class="col-lg-8">
-		<h4>
-			<strong>{{ 'ABOUT' | translate}}</strong>
-		</h4>
-		<p>{{currentUser.about}}</p>
-		<br>
-		<accordion close-others=true> <accordion-group heading="{{'EDIT_PROFILE' | translate}}"
-			is-open="profileEditStatus.open" class="myPointerHand">
-		<div>
-			<div>
-				<form class="form-horizontal" role="form">
-					<form-row model="currentUser.firstName" name="FIRST_NAME" size="col-sm-8" callback="save()"></form-row>
-					<form-row model="currentUser.lastName" name="LAST_NAME" size="col-sm-8" callback="save()"></form-row>
-					<form-select-year model="currentUser.dateOfBirth" name="YEAR_OF_BIRTH" options="years"></form-select-year>
-					<form-row model="currentUser.city" name="CITY" size="col-sm-8" callback="save()"></form-row>
-					<form-row model="currentUser.country" name="COUNTRY" size="col-sm-8" callback="save()"></form-row>
-					<form-text-area model="currentUser.about" name="ABOUT" size="col-sm-8" callback="save()"></form-text-area>
-					<form-file-upload fileread="currentUser.avatar" size="col-sm-8" name="AVATAR_PHOTO" callback="save"></form-file-upload>
-					<alert ng-repeat="alert in alerts" close="closeAlert($index)" type="alert.type"> {{alert.message}} </alert>
-				</form>
-			</div>
-		</div>
-		</accordion-group> <accordion-group heading="{{'CHANGE_PASSWORD' | translate}}" is-open="changePasswordStatus.open"
-			class="myPointerHand">
-		<div>
-			<div>
-				<form class="form-horizontal" role="form">
-					<form-row model="password.newPassword" name="NEW_PASSWORD" size="col-sm-8" type="password"></form-row>
-					<form-row model="password.repeatedNewPassword" name="REPEAT_PASSWORD" size="col-sm-8" type="password"></form-row>
-					<form-row model="password.currentPassword" name="CURRENT_PASSWORD" size="col-sm-8" type="password"></form-row>
-					<br>
-				</form>
-			</div>
-			<div>
-				<button class="btn btn-default btn-sm" data-ng-click="changePassword()">{{'SAVE' | translate}}</button>
-				<button class="btn btn-warning btn-sm" ng-click="changePasswordStatus.open = !changePasswordStatus.open">
-					{{'CANCEL' | translate}}</button>
-			</div>
-		</div>
-		</accordion-group> </accordion>
-	</div>
+    <div class="col-lg-4">
+        <p>
+            <img src="{{currentUser.avatar}}" height="300" width="200" /> <br> <br> <strong>{{'FIRST_NAME'
+                | translate}}:</strong> {{currentUser.firstName}} <br> <strong>{{'LAST_NAME' | translate}}:</strong>
+            {{currentUser.lastName}} <br> <strong>{{'COUNTRY' | translate}}</strong> {{currentUser.country}} <br>
+            <strong>{{'CITY' | translate}}:</strong> {{currentUser.city}} <br> <strong>{{'AGE' |
+                translate}}:</strong> {{2014-currentUser.dateOfBirth}}
+        </p>
+    </div>
+    <div class="col-lg-8">
+        <h4>
+            <strong>{{ 'ABOUT' | translate}}</strong>
+        </h4>
+        <p>{{currentUser.about}}</p>
+        <br>
+        <accordion close-others=true> <accordion-group heading="{{'EDIT_PROFILE' | translate}}"
+            is-open="profileEditStatus.open" class="myPointerHand">
+        <div>
+            <div>
+                <form class="form-horizontal" role="form">
+                    <form-row model="currentUser.firstName" name="FIRST_NAME" size="col-sm-8" callback="save()"></form-row>
+                    <form-row model="currentUser.lastName" name="LAST_NAME" size="col-sm-8" callback="save()"></form-row>
+                    <form-select-year model="currentUser.dateOfBirth" name="YEAR_OF_BIRTH" options="years"></form-select-year>
+                    <form-row model="currentUser.city" name="CITY" size="col-sm-8" callback="save()"></form-row>
+                    <form-row model="currentUser.country" name="COUNTRY" size="col-sm-8" callback="save()"></form-row>
+                    <form-text-area model="currentUser.about" name="ABOUT" size="col-sm-8" callback="save()"></form-text-area>
+                    <form-file-upload fileread="currentUser.avatar" size="col-sm-8" name="AVATAR_PHOTO" callback="save"></form-file-upload>
+                    <alert ng-repeat="alert in alerts" close="closeAlert($index)" type="alert.type">
+                    {{alert.message}} </alert>
+                </form>
+            </div>
+        </div>
+        </accordion-group> <accordion-group heading="{{'CHANGE_PASSWORD' | translate}}" is-open="changePasswordStatus.open"
+            class="myPointerHand">
+        <div>
+            <div>
+                <form class="form-horizontal" role="form">
+                    <form-row model="password.newPassword" name="NEW_PASSWORD" size="col-sm-8" type="password"></form-row>
+                    <form-row model="password.repeatedNewPassword" name="REPEAT_PASSWORD" size="col-sm-8"
+                        type="password"></form-row>
+                    <form-row model="password.currentPassword" name="CURRENT_PASSWORD" size="col-sm-8" type="password"></form-row>
+                    <br>
+                </form>
+            </div>
+            <div>
+                <button class="btn btn-default btn-sm" data-ng-click="changePassword()">{{'SAVE' | translate}}</button>
+                <button class="btn btn-warning btn-sm" ng-click="changePasswordStatus.open = !changePasswordStatus.open">
+                    {{'CANCEL' | translate}}</button>
+            </div>
+        </div>
+        </accordion-group> </accordion>
+    </div>
 </div>
