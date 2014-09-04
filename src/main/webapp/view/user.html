@@ -4,10 +4,10 @@
 <div class="row">
 	<div class="col-lg-4">
 		<p>
-			<img src="{{currentUser.avatar}}" height="300" width="200" /> <br> <br> <strong>{{'FIRST_NAME' | translate}}</strong>
-			{{currentUser.firstName}} <br> <strong>{{'LAST_NAME' | translate}}</strong> {{currentUser.lastName}} <br> <strong>{{'COUNTRY' | translate}}</strong>
-			{{currentUser.country}} <br> <strong>{{'CITY' | translate}}</strong> {{currentUser.city}} <br> <strong>{{'AGE' | translate}}</strong>
-			{{2014-currentUser.dateOfBirth}}
+			<img src="{{currentUser.avatar}}" height="300" width="200" /> <br> <br> <strong>{{'FIRST_NAME' |
+				translate}}</strong> {{currentUser.firstName}} <br> <strong>{{'LAST_NAME' | translate}}</strong>
+			{{currentUser.lastName}} <br> <strong>{{'COUNTRY' | translate}}</strong> {{currentUser.country}} <br> <strong>{{'CITY'
+				| translate}}</strong> {{currentUser.city}} <br> <strong>{{'AGE' | translate}}</strong> {{2014-currentUser.dateOfBirth}}
 		</p>
 	</div>
 	<div class="col-lg-8">
@@ -16,8 +16,8 @@
 		</h4>
 		<p>{{currentUser.about}}</p>
 		<br>
-		<accordion close-others=true> <accordion-group heading="{{'EDIT_PROFILE' | translate}}" is-open="profileEditStatus.open"
-			class="myPointerHand">
+		<accordion close-others=true> <accordion-group heading="{{'EDIT_PROFILE' | translate}}"
+			is-open="profileEditStatus.open" class="myPointerHand">
 		<div>
 			<div>
 				<form class="form-horizontal" role="form">
@@ -32,7 +32,8 @@
 				</form>
 			</div>
 		</div>
-		</accordion-group> <accordion-group heading="{{'CHANGE_PASSWORD' | translate}}" is-open="changePasswordStatus.open" class="myPointerHand">
+		</accordion-group> <accordion-group heading="{{'CHANGE_PASSWORD' | translate}}" is-open="changePasswordStatus.open"
+			class="myPointerHand">
 		<div>
 			<div>
 				<form class="form-horizontal" role="form">

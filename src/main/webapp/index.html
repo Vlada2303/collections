@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" data-ng-app="collectionsApp">
-	<head>
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-		<title>Collections</title>
-		<link rel="icon" href="/public/favicon.jpg">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/collections.less">
-	</head>
-	<body>
-		<div class="container" data-ng-controller="indexController">
-			<h1 class="text-muted myPointerHand" ><img src="/public/favicon.jpg" width="75" height="75" data-ng-click="checkAuth()"> {{'APPLICATION' | translate}} </h1>
-			<img src="/public/english2.png" width="40" height="20" data-ng-click="changeLanguage('en')" class="myPointerHand">
-			<img src="/public/serbian2.jpg" width="40" height="20" data-ng-click="changeLanguage('rs')" class="myPointerHand">
-			<div data-ui-view></div>
-		</div>
-	</body>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.4/less.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/bower-angular-translate/2.0.1/angular-translate.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/bower-angular-translate-loader-static-files/2.0.0/angular-translate-loader-static-files.min.js"></script>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<title>Collections</title>
+<link rel="icon" href="/public/favicon.jpg">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/collections.less">
+</head>
+<body>
+	<div class="container" data-ng-controller="indexController">
+		<h1 class="text-muted myPointerHand">
+			<img src="/public/favicon.jpg" width="75" height="75" data-ng-click="checkAuth()"> {{'APPLICATION' |
+			translate}}
+		</h1>
+		<img src="/public/english2.png" width="40" height="20" data-ng-click="changeLanguage('en')" class="myPointerHand">
+		<img src="/public/serbian2.jpg" width="40" height="20" data-ng-click="changeLanguage('rs')" class="myPointerHand">
+		<div data-ui-view></div>
+	</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.4/less.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bower-angular-translate/2.0.1/angular-translate.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/bower-angular-translate-loader-static-files/2.0.0/angular-translate-loader-static-files.min.js"></script>
 
-	<script src="/scripts/app.js"></script>
+<script src="/scripts/app.js"></script>
 
-	<script src="/scripts/service/userService.js"></script>
-	<script src="/scripts/service/bookService.js"></script>
+<script src="/scripts/service/userService.js"></script>
+<script src="/scripts/service/bookService.js"></script>
 
-	<script src="/scripts/controller/indexController.js"></script>
-	<script src="/scripts/controller/registerController.js"></script>
-	<script src="/scripts/controller/homeController.js"></script>
-	<script src="/scripts/controller/loginController.js"></script>
-	<script src="/scripts/controller/bookController.js"></script>
-	<script src="/scripts/controller/bookDetailsController.js"></script>
-	<script src="/scripts/controller/userController.js"></script>
-	<script src="/scripts/controller/dropDownUserMenu.js"></script>
-	<script src="/directives/formRow.js"></script>
-	<script src="/directives/formSelect.js"></script>
-	<script src="/directives/formSelectYear.js"></script>
-	<script src="/directives/formFileUpload.js"></script>
-	<script src="/directives/formTextArea.js"></script>
+<script src="/scripts/controller/indexController.js"></script>
+<script src="/scripts/controller/registerController.js"></script>
+<script src="/scripts/controller/homeController.js"></script>
+<script src="/scripts/controller/loginController.js"></script>
+<script src="/scripts/controller/bookController.js"></script>
+<script src="/scripts/controller/bookDetailsController.js"></script>
+<script src="/scripts/controller/userController.js"></script>
+<script src="/scripts/controller/dropDownUserMenu.js"></script>
+<script src="/directives/formRow.js"></script>
+<script src="/directives/formSelect.js"></script>
+<script src="/directives/formSelectYear.js"></script>
+<script src="/directives/formFileUpload.js"></script>
+<script src="/directives/formTextArea.js"></script>
 
 </html>

@@ -24,6 +24,9 @@ import eu.execom.collections.utility.Response;
 @RequestMapping("/book")
 public class BookController {
 
+    final public genreType[] genreTypes = genreType.values();
+    final public coverType[] coverTypes = coverType.values();
+    
     @Resource
     BookDAO bookDao;
     
@@ -52,13 +55,11 @@ public class BookController {
     
     @RequestMapping(value = "/getGenreTypes", method = RequestMethod.GET)
     public genreType[] getGenreTypes() {
-        genreType[] genreTypes = genreType.class.getEnumConstants();
         return genreTypes;
     }
     
     @RequestMapping(value = "/getCoverTypes", method = RequestMethod.GET)
     public coverType[] getCoverTypes() {
-        coverType[] coverTypes = coverType.class.getEnumConstants();
         return coverTypes;
     }
 }

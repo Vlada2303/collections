@@ -1,14 +1,12 @@
-collectionsApp.directive('formSelect', function(){
+collectionsApp.directive('formSelect', function() {
     return {
-        restrict: 'E',
-        replace: true,
-        scope: {
-            model: '=',
-            name: '@',
-            options: '='
+        restrict : 'E',
+        replace : true,
+        scope : {
+            model : '=',
+            name : '@',
+            options : '='
         },
-        templateUrl: '/directives/formSelect.html',
-        link: function(scope, attrs, element) {
-        }
+        templateUrl : '/directives/formSelect.html',
     }
 });
