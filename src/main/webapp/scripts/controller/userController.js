@@ -38,6 +38,9 @@ collectionsApp.controller('userController', function($scope, userService, $timeo
     $scope.changePassword = function() {
         if ($scope.password.newPassword === $scope.password.repeatedNewPassword) {
             userService.changePassword($scope.password.newPassword, $scope.password.currentPassword);
+            $scope.password.newPassword = "";
+            $scope.password.repeatedNewPassword = "";
+            $scope.password.currentPassword = "";
         }
     }
 

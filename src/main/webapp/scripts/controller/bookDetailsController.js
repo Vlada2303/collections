@@ -1,4 +1,4 @@
-collectionsApp.controller('bookDetailsController' , function($scope, $modalInstance, bookService, book, $translate) {
+collectionsApp.controller('bookDetailsController' , function($scope, $modalInstance, bookService, book) {
 
     $scope.init = function() {
         $scope.book = book;
