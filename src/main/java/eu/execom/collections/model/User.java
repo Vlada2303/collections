@@ -30,8 +30,8 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "curent_password", nullable = false)
-    private String curentPassword;
+    @Column(name = "current_password", nullable = false)
+    private String currentPassword;
 
     @Column(name = "date_of_birth")
     private long dateOfBirth;
@@ -88,12 +88,12 @@ public class User {
         this.email = email;
     }
 
-    public String getCurentPassword() {
-        return curentPassword;
+    public String getCurrentPassword() {
+        return currentPassword;
     }
 
-    public void setCurentPassword(String curentPassword) {
-        this.curentPassword = curentPassword;
+    public void setCurrentPassword(String currentPassword) {
+        this.currentPassword = currentPassword;
     }
 
     public long getDateOfBirth() {
@@ -160,7 +160,7 @@ public class User {
         result = prime * result + ((avatar == null) ? 0 : avatar.hashCode());
         result = prime * result + ((city == null) ? 0 : city.hashCode());
         result = prime * result + ((country == null) ? 0 : country.hashCode());
-        result = prime * result + ((curentPassword == null) ? 0 : curentPassword.hashCode());
+        result = prime * result + ((currentPassword == null) ? 0 : currentPassword.hashCode());
         result = prime * result + (int) (dateOfBirth ^ (dateOfBirth >>> 32));
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + (enabled ? 1231 : 1237);
@@ -200,10 +200,10 @@ public class User {
                 return false;
         } else if (!country.equals(other.country))
             return false;
-        if (curentPassword == null) {
-            if (other.curentPassword != null)
+        if (currentPassword == null) {
+            if (other.currentPassword != null)
                 return false;
-        } else if (!curentPassword.equals(other.curentPassword))
+        } else if (!currentPassword.equals(other.currentPassword))
             return false;
         if (dateOfBirth != other.dateOfBirth)
             return false;

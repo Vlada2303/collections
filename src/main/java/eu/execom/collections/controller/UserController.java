@@ -52,7 +52,7 @@ public class UserController {
             return Response.setError("User allready in databse!");
         } else {
             user.setRole(roleType.ROLE_USER);
-            user.setCurentPassword(encoder.encode(user.getCurentPassword()));
+            user.setCurrentPassword(encoder.encode(user.getCurrentPassword()));
             userDao.save(user);
             return Response.setSuccess("Registration succsessful!");
         }
@@ -61,11 +61,11 @@ public class UserController {
     @RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
     public HashMap<String, String> loginUser(@RequestBody final User user) {
         final User foundUser = userDao.findByEmail(user.getEmail());
-        if (foundUser == null || !encoder.matches(user.getCurentPassword(), foundUser.getCurentPassword())) {
+        if (foundUser == null || !encoder.matches(user.getCurrentPassword(), foundUser.getCurrentPassword())) {
             return Response.setError("Bad credentials");
         } else {
             final UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(
-                    user.getEmail(), user.getCurentPassword(), AuthorityUtils.createAuthorityList(foundUser.getRole()
+                    user.getEmail(), user.getCurrentPassword(), AuthorityUtils.createAuthorityList(foundUser.getRole()
                             .name()));
             final Authentication authentication = authenticationManager.authenticate(authRequest);
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -76,8 +76,8 @@ public class UserController {
     @RequestMapping(value = "/changePassword/{newPassword}/{currentPassword}", method = RequestMethod.GET)
     public HashMap<String, String> changePassword(@PathVariable("newPassword") String newPassword, @PathVariable("currentPassword") String currentPassword) {
         final User foundUser = userDao.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-        if (encoder.matches(currentPassword, foundUser.getCurentPassword())) {
-            foundUser.setCurentPassword(encoder.encode(newPassword));
+        if (encoder.matches(currentPassword, foundUser.getCurrentPassword())) {
+            foundUser.setCurrentPassword(encoder.encode(newPassword));
             userDao.save(foundUser);
             return Response.setSuccess("Password changed successfully!");
         } else {

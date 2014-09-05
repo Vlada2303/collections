@@ -25,7 +25,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("SELECT email, curent_password, enabled FROM user WHERE email=?")
+                .usersByUsernameQuery("SELECT email, current_password, enabled FROM user WHERE email=?")
                 .authoritiesByUsernameQuery("SELECT email, role FROM user WHERE email=?")
                 .passwordEncoder(passwordEncoder());
     }
