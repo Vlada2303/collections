@@ -8,14 +8,7 @@ import eu.execom.collections.model.Picture;
 import eu.execom.collections.model.User;
 
 public interface PictureDAO extends CrudRepository<Picture, Long> {
-    
+
     public List<Picture> findByUser(User user);
-    
+
 }
-
-
-
-
-
-    
-

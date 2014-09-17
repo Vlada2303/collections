@@ -55,7 +55,15 @@ translationService.config(function($translateProvider) {
         "HARDCOVER" : "Hardcover",
         "PAPERBACK" : "Paperback",
         "FICTION" : "Fiction",
-        "NONFICTION" : "Non-fiction"
+        "NONFICTION" : "Non-fiction",
+        "PICTURE_COLLECTION" : "Picture collection",
+        "PICTURE_IMAGE" : "Picture image",
+        "ARTIST" : "Artist",
+        "STYLE" : "Style",
+        "TECHNIQUE" : "Tehnique",
+        "MATERIAL" : "Material",
+        "DIMENSIONS" : "Dimensions"
+        
     })
     $translateProvider.useStaticFilesLoader({
         prefix : 'locale-',

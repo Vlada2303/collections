@@ -26,15 +26,15 @@ public class PictureController {
 
     final public pictureGenre[] pictureGenres = pictureGenre.values();
     final public pictureStyle[] pictureStyles = pictureStyle.values();
-    final public pictureTechnique [] pictureTechniques = pictureTechnique.values();
-    
+    final public pictureTechnique[] pictureTechniques = pictureTechnique.values();
+
     @Resource
     PictureDAO pictureDao;
-    
+
     @Autowired
     UserDAO userDao;
-    
-    //SAVE METHOD
+
+    // SAVE METHOD
     @PreAuthorize("hasRole('ROLE_USER')")
     @RequestMapping(value = "/save", method = {RequestMethod.POST, RequestMethod.GET})
     public HashMap<String, String> addPicture(@RequestBody Picture picture) {
@@ -42,35 +42,33 @@ public class PictureController {
         pictureDao.save(picture);
         return Response.setSuccess("Picture saved successfuly.");
     }
- 
-    //DELETE METHOD
+
+    // DELETE METHOD
     @PreAuthorize("hasRole('ROLE_USER')")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public HashMap<String, String> deletePicture(@RequestBody Picture picture) {
         pictureDao.delete(picture.getId());
         return Response.setSuccess("Picture deleted successfuly.");
     }
-    
+
     @RequestMapping(value = "/getAllPicture", method = RequestMethod.GET)
     public List<Picture> listPicture() {
-        return pictureDao.findByUser(userDao.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName()));
+        return pictureDao.findByUser(userDao.findByEmail(SecurityContextHolder.getContext().getAuthentication()
+                .getName()));
     }
-    
-    @RequestMapping(value = "/getGenreTypes", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/getPictureGenres", method = RequestMethod.GET)
     public pictureGenre[] getpictureGenre() {
         return pictureGenres;
     }
 
-    @RequestMapping(value = "/getpictureStyles", method = RequestMethod.GET)
+    @RequestMapping(value = "/getPictureStyles", method = RequestMethod.GET)
     public pictureStyle[] getpictureStyle() {
         return pictureStyles;
     }
-    
-    @RequestMapping(value = "/getpictureTehniques", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/getPictureTehniques", method = RequestMethod.GET)
     public pictureTechnique[] getpictureTechnique() {
         return pictureTechniques;
     }
 }
-    
-   
-    

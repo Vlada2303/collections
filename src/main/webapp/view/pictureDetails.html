@@ -1,0 +1,25 @@
+<div class="modalPic-header">
+ <h3 class="modalPIc-title text-center">{{'PICTURE_DETAILS' | translate}}</h3>
+</div>
+<div class="modalPic-body" data-ng-init="init()">
+ <div class="container">
+  <form class="form-horizontal" role="form">
+   <img src="{{picture.image}}" height="150" width="100" /> <br>
+   <form-row model="picture.title" name="TITLE" size="col-sm-3" type="text"></form-row>
+   <form-row model="picture.artist" name="ARTIST" size="col-sm-3" type="text"></form-row>
+   <form-row model="picture.completionDate" name="YEAR" size="col-sm-3" type="number"></form-row>
+   <form-select model="picture.genre" name="GENRE" options="genres" size="col-sm-3"></form-select>
+   <form-row model="picture.style" name="STYLE" options="styles" size="col-sm-3"></form-row>
+   <form-select model="picture.technique" name="TECHNIQUE" options="tehniques" size="col-sm-3"></form-select>
+   <form-row model="picture.dimensions" name="DIMENSIONS" size="col-sm-3" type="text"></form-row>
+   <form-row model="picture.material" name="MATERIAL" size="col-sm-3" type="text"></form-row>
+   <form-file-upload name="PICTURE_IMAGE" fileread="picture.image"></form-file-upload>
+  </form>
+ </div>
+</div>
+<div class="modalPic-footer">
+ <img data-ng-src='{{image}}'>
+ <button class="btn btn-success" data-ng-click="save()">Save</button>
+ <button class="btn btn-danger" data-ng-click="deletePicture()">Delete</button>
+ <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
+</div>

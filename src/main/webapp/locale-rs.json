@@ -52,5 +52,12 @@
     "HARDCOVER":"Tvrdi povez",
     "PAPERBACK":"Briširani povez",
     "FICTION":"Beletristika",
-    "NONFICTION":"Stručna literatura"
+    "NONFICTION":"Stručna literatura",
+    "PICTURE_COLLECTION" : "Kolekcija slika",
+    "PICTURE_IMAGE" : "Fotografija slike",
+    "ARTIST" : "Umetnik",
+    "STYLE" : "Stil",
+    "TECHNIQUE" : "Tehnika",
+    "MATERIAL" : "Materijal",
+    "DIMENSIONS" : "Dimenzije"
 }

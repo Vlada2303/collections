@@ -1,0 +1,42 @@
+<div data-ng-init="init()">
+ <div align="right" data-ng-include="'view/dropDownUserMenu.html'"></div>
+ <h4 class="textPic-center">
+  <strong>{{'PICTURE_COLLECTION' | translate}}</strong>
+ </h4>
+ <br>
+ <table class="table tablePic-hover">
+  <thead>
+   <tr>
+    <th>{{'ID' | translate}}</th>
+    <th>{{'PICTURE_IMAGE' | translate}}</th>
+    <th>{{'TITLE' | translate}}</th>
+    <th>{{'ARTIST' | translate}}</th>
+    <th>{{'YEAR' | translate}}</th>
+    <th>{{'STYLE' | translate}}</th>
+    <th>{{'GENRE' | translate}}</th>
+    <th>{{'TECHNIQUE' | translate}}</th>
+    <th>{{'MATERIAL' | translate}}hover</th>
+    <th>{{'DIMENSIONS' | translate}}</th>
+    <th>{{'ACTION' | translate}}</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr data-ng-repeat="picture in pictures">
+    <td>{{$index+1}}</td>
+    <td><img src="{{picture.image}}" height="64" width="44" /></td>
+    <td>{{picture.title}}</td>
+    <td>{{picture.artist}}</td>
+    <td>{{picture.completion_date}}</td>
+    <td>{{picture.style}}</td>
+    <td>{{picture.genre}}</td>
+    <td>{{picture.technique}}</td>
+    <td>{{picture.material}}</td>
+    <td>{{picture.dimensions}}</td>
+    <td><a class="btn btn-warning" data-toggle="modal" data-ng-click="open(picture)">{{'EDIT' | translate}}</a></td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="textPic-center">
+  <a class="btn btn-success" data-toggle="modal" data-ng-click="open({})">{{'ADD_NEW_PICTURE' | translate}}</a>
+ </p>
+</div>

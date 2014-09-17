@@ -228,4 +228,3 @@ public class Picture {
         return true;
     }
 }
-    
