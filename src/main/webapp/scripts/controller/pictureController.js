@@ -12,9 +12,7 @@ collectionsApp.controller('pictureController', function($scope, pictureService,
 			$scope.pictures = response.data;
 		});
 
-		alert("aa");
 	}
-	//$scope.init();
 	$scope.open = function(picture, callback) {
 		modalInstance = $modal.open({
 			templateUrl : '/view/pictureDetails.html',
@@ -26,11 +24,13 @@ collectionsApp.controller('pictureController', function($scope, pictureService,
 				}
 			}
 		});
-
 		modalInstance.result.then(function(result) {
 			if (result === 'success') {
-				pictureService.getAllBooks(onInit);
+				pictureService.getAllPictures(function(response) {
+					$scope.pictures = response.data;
+				});
 			}
 		});
 	}
+
 });

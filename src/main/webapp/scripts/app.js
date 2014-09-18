@@ -26,8 +26,8 @@ collectionsApp.config(function($stateProvider, $urlRouterProvider) {
 		controller : 'bookController'
 	}).state('picture', {
 		url : '/picture',
-		temlateUrl:'/view/picture.html',
-		controller: 'pictureController'
+		templateUrl : '/view/proba.html',
+		controller : 'pictureController'
 	})
 
 });

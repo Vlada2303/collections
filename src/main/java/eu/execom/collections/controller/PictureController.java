@@ -51,24 +51,24 @@ public class PictureController {
         return Response.setSuccess("Picture deleted successfuly.");
     }
 
-    @RequestMapping(value = "/getAllPicture", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllPictures", method = RequestMethod.GET)
     public List<Picture> listPicture() {
         return pictureDao.findByUser(userDao.findByEmail(SecurityContextHolder.getContext().getAuthentication()
                 .getName()));
     }
 
     @RequestMapping(value = "/getPictureGenres", method = RequestMethod.GET)
-    public pictureGenre[] getpictureGenre() {
+    public pictureGenre[] getPictureGenres() {
         return pictureGenres;
     }
-
+    
     @RequestMapping(value = "/getPictureStyles", method = RequestMethod.GET)
-    public pictureStyle[] getpictureStyle() {
+    public pictureStyle[] getPictureStyles() {
         return pictureStyles;
     }
 
-    @RequestMapping(value = "/getPictureTehniques", method = RequestMethod.GET)
-    public pictureTechnique[] getpictureTechnique() {
+    @RequestMapping(value = "/getPictureTechniques", method = RequestMethod.GET)
+    public pictureTechnique[] getPictureTechniques() {
         return pictureTechniques;
     }
 }

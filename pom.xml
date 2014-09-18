@@ -5,7 +5,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<artifactId>my_practice_project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Execom Practice Project</name>
-	<description>Author: Ljubomir Papuga</description>
+	<description>Author: Ljubomir Papuga, Vladimir Stevanovic</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
